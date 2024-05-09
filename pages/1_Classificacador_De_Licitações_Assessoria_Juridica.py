@@ -1,4 +1,5 @@
 import streamlit as st
+from unidecode import unidecode
 from pathlib import Path
 from joblib import load
 
@@ -21,6 +22,7 @@ objeto_licitacao = st.text_area("Objeto da Licitação", value="", label_visibil
 
 if st.button("Classificar Licitação", key="clear", type="primary"):
   txt = objeto_licitacao.lower()
+  txt = unidecode(txt)
   vetorizar = load(path_tfidf)
   texto_vetorizado = vetorizar.transform([txt])
   modelo =load(path_model)
