@@ -4,7 +4,7 @@ from pathlib import Path
 from joblib import load
 
 
-path_model = Path(__file__).parent.parent / "ml/classificador_assessoria.joblib"
+path_model = Path(__file__).parent.parent / "ml/random_forest.joblib"
 path_tfidf = Path(__file__).parent.parent / "ml/vetorizador.joblib"
 
 st.title('Executar Modelo')
